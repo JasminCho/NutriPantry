@@ -1,0 +1,72 @@
+<!--<h1>Results Page!!!</h1>-->
+
+<!DOCTYPE html>
+<html>
+ <head>
+     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" type="text/css" href="resultsStyle.css"/>
+     <link rel="stylesheet" type="text/css" href="navbar.css">
+    <title>Search Result</title>
+ </head>
+ <body>
+    <%-include('partials/navbar', { user: user }) %>
+    
+     <div class="container">
+         <div class = "row">
+             <div class = "col-md-9">
+                 <h1>Your Search Results</h1>
+                 <h4>Searched for: <code><%= searchTerm %></code></h4>
+             </div>
+<!--              <div class = "col-md-3">
+                <a href="/">
+                    <button type="button" class="btn btn-success">Back To Home Page</button>
+                </a>
+             </div>   -->
+         </div> 
+         
+        <div class="row">
+            <% data["matches"].forEach(function(match) { %>
+                <div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h3 class="panel-title"><a href=https://yummly.com/#recipe/<%= match["id"]%> target="_new"><%= match["recipeName"] %></a></h3>
+                          </div>
+                          <div class="panel-body">
+                            <form method="POST" action="/save">
+                                <input type="hidden" name="title" value="<%= match["recipeName"] %>" />
+                                <input type="hidden" name="yummly_id" value="<%= match["id"] %>" />
+                                <input type="hidden" name="image" value="<%= match["smallImageUrls"] ? match["smallImageUrls"][0] : "" %>" />
+                                <a href=https://yummly.com/#recipe/<%= match["id"]%> target="_new">
+                                    <img src="<%= match["smallImageUrls"] ? match["smallImageUrls"][0].replace("=s90", "=l360") : "" %>" class="img-thumbnail img-responsive">
+                                </a>
+                                <h4>
+                                <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="<h4>Ingredients</h4>
+                                <ul>
+                                    <% match["ingredients"].forEach(function(ingredient) { %>
+                                    <li><%= ingredient %></li>
+                                    <% }) %>
+                                </ul>">
+                                  Ingredients
+                                </button>
+                                    <button class="btn btn-default pull-right"><span class="glyphicon glyphicon-heart"></span> Add to favorites</button>
+                                </h4>
+                            </form>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <p><%- data["attribution"]["html"] %></p>
+     </div>
+  
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $("[data-toggle=popover]").popover();
+    </script>
+ </body>
+</html>
+

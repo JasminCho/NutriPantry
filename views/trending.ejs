@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <link href="bootstrap.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" type="text/css" href="trendingStyle.css"/>
+     <link rel="stylesheet" type="text/css" href="navbar.css">
+    <title>Trending</title>
+ </head>
+    
+    
+ <body>
+     <%-include('partials/navbar', { user: user }) %>
+     <div class="container">
+        <div class="jumbotron">
+            <h1>Trending Recipes</h1>
+            <p>The most liked, shared, and viewed recipes this week</p>
+        </div>
+        
+    <div class="trendingTile row">
+            <% data["recipes"].forEach(function(match) { %>
+                    <div class = "col-lg-4 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><a href=<%= match["source_url"]%> target="_blank"><%= match["title"]%></a></h3>
+                            </div>
+                            <div class="panel-body">
+                                <a href=<%= match["source_url"]%> target="_blank"><img src=<%= match["image_url"]%> class="img-responsive img-thumbnail imgThumbnail" /></a>
+                            </div>
+                        </div>
+                    </div>
+    
+            <% }) %>
+        </div>        
+     </div>
+     
+ 
+     
+     
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ </body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    background: #e7f4df;
+}
+
+h1 {
+    padding-top: 20px;
+    font-weight: 700;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.btn-success {
+    position: absolute;
+    top: 6%;
+    left: 75%;
+}
+
+.thumbnail {
+    width: 360px;
+    height: 360px;
+}
+
+#recipeTile {
+    text-align: center;
+}
+
+.recipe-image {
+    height: 350px;
+    width: 350px;
+}

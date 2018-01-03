@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" type="text/css" href="/profileStyle.css"/>
+     <link rel="stylesheet" type="text/css" href="/navbar.css">
+    <title>User Profile</title>
+ </head>
+    
+ <body>
+     <%-include('partials/navbar', { user: user }) %>
+  
+     <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome  <%= user['name'] %>!</h1>
+        </div>
+         
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class="col-lg-3 col-md-6">
+            <div class="sidebar-nav">
+                <h3>Favorites</h3>
+                <ul>
+                <% savedRecipes.forEach(function(recipe) {  %>
+                    <form method="POST" action="/unsave">
+                        <input type="hidden" name="yummly_id" value="<%= recipe["yummly_id"] %>" />
+                        <li><button class="btn btn-link pull-right"><span class="glyphicon glyphicon-remove"></span></button><a href="/profile/nutrinalysis/<%= recipe["yummly_id"] %>"><%= recipe["title"] %></a> </li>
+                    </form>
+                    <hr />
+                <% }) %>
+                </ul>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+            
+        <div id="profile-content" class="col-lg-9 col-md-7">
+            <h4 class="text-center">Select a recipe from your favorites for nutrinalysis!</h4>
+        </div>
+         
+     </div>
+     
+     
+     
+ 
+     
+     
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" type="text/css" href="aboutStyle.css"/>
+     <link rel="stylesheet" type="text/css" href="navbar.css">
+    <title>About Us</title>
+ </head>
+
+ <body>
+         <%-include('partials/navbar', { user: user }) %>
+     
+     
+     <div class = "container">
+         <div class="jumbotron">
+            <h1>About Us</h1>
+        </div>
+         <hr>
+        <div class="jumbotron aboutText">
+            <p>
+            <center><img src="/images/cooking.jpg" class="img-thumbnail img-responsive" /></center>
+            </p>
+
+             <p>
+            This website is focused towards individuals whom are interested in cooking a nutritious dish based on what they have in their pantry, however are also willing to branch out if need be and go to the grocery store in order to successfully create their desired healthy and delicious recipe. With this website you can input all of the ingredients you wish to use into the search bar so that the best matching recipe to ingredients is returned.
+            </p>
+
+            <p>With the results returned, you will notice that some recipes have ingredients that are additional to the ingredients you have entered in, and this is because NutriPantry not only returns dishes based on your current ingredients but also encourages healthy dishes that can be made with the extra one to two ingredients. NutriPantry’s built-in search engine also has the ability for users to set dietary restrictions based on their requirements (i.e. gluten-free recipes, vegan recipes, etc).
+            </p>
+
+            <p>
+            You can also create a user account in order to track your nutritional intake and recipe search history. Creating an account will firstly allow the user to search for recipes and have each recipe searched/looked at saved in their recipe history so that the user can go back to their search history in order to recreate or pass on the recipe. This feature is unavailable to guests however guests of the website will still be able to search for recipes however not be able to have their search history saved. Another benefit to creating an account would be that the user would be able to utilize the calendar so that the user can map out which recipes they plan on making for each day of the week. This would help in the case that the user has enough time to gather the ingredients necessary to create the desired recipe. Lastly having a user account would allow for the user to keep track of their nutritional intake based off of the recipes they created. </p>
+            </p>                             
+        </div>
+    </div>        
+     
+     
+
+     
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ </body>
+</html>

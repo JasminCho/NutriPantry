@@ -1,0 +1,53 @@
+@import 
+url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body 
+{
+    font-family: "Roboto", sans-serif;
+    background: #e7f4df;
+}
+
+.jumbotron 
+{
+    background: white;
+    color: #4CAF50;
+}
+
+#profile-content
+{
+    background: white;
+    min-height: 500px;
+    padding: 20px;
+}
+
+.sidebar-nav {
+    padding: 20px;
+    padding-top: 10px;
+    background: white;
+    font-size: 15pt;
+}
+
+.sidebar-nav h3 {
+    padding-bottom: 10px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    padding: 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #4CAAFF;
+}

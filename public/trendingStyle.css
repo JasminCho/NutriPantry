@@ -1,0 +1,30 @@
+body {
+    background: #e7f4df;
+}
+
+.jumbotron {
+/*    color: #2c3e50;*/
+    background: white;
+}
+
+.thumbnail {
+    height: 320px;
+}
+
+.containerImg {
+    width: auto;
+    height: 250px;
+}
+
+.containerImg img {
+    width: 100%;
+    height: 100%;
+}
+
+#recipeTile {
+	text-align: center;
+}
+
+.imgThumbnail {
+	height: 300px;
+}

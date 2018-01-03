@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="homeStyle.css">
+        <link rel="stylesheet" type="text/css" href="navbar.css">
+        <title>Main Page</title>
+    </head>
+    
+    <body>  
+        <%-include('partials/navbar', { user: user }) %>
+     
+        
+        <div id="popup1" class="overlay">
+           <div class="popup">
+              <h2>Thank you for using our web services</h2>
+              <a class="close" href="#">&times;</a>
+              <div class="content">
+                 <p>
+                    Simply type in the ingredients you have and we will recommend you some recipes. Type in a recipe name, ingredient, occasion (thanksgiving), dietary restriction (gluten-free)
+                </p>
+              </div>
+           </div>
+        </div>
+        
+        <div class = "container">
+            <a class="button" href="#popup1"> 
+                <h1> NutriPantry </h1>
+            </a>
+            <div class = "row">
+
+                <form id="custom-search-input" role="search" action="/results" method="GET">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-lg" placeholder="Ingredients..." name="search"/>
+                        <div class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+            
+            <div class ="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="thumbnail">
+                        <figure class = "photos">
+                            <img src="images/fruit.jpg">
+                        </figure>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6">
+                    <div class="thumbnail">
+                        <figure class = "photos">
+                            <img src="images/meat.jpg">
+                        </figure>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6">
+                    <div class="thumbnail">
+                        <figure class = "photos">
+                             <img src="images/vege.jpg">
+                        </figure>
+                    </div>
+                </div> 
+            </div>
+        
+            
+            <div class ="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="thumbnail">
+                        <figure class = "photos">
+                            <img src="images/cheese.jpg">
+                        </figure> 
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6">
+                    <div class="thumbnail">
+                        <figure class = "photos">
+                             <img src="images/fish.jpg">
+                        </figure>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6">
+                    <div class="thumbnail">
+                        <figure class = "photos">
+                             <img src="images/breads.jpg">
+                        </figure>
+                       
+                    </div>
+                </div> 
+            </div>
+        
+    
+        
+        
+        </div>
+     
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
